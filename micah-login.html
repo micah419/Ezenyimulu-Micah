@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #2b1f3d; color: #fff; }
+    .card { background: #3a2a52; border: 1px solid #5d4780; border-radius: 12px; }
+    .card h3 { color: #fff; }
+    .form-label { color: #eadfff; }
+    .form-control { background: #2b1f3d; border: 1px solid #7a62a3; color: #fff; }
+    .form-control:focus { background: #2b1f3d; color: #fff; border-color: #c39bff; box-shadow: 0 0 0 .2rem rgba(195,155,255,.25); }
+    .form-control::placeholder { color: #a897c4; }
+    .btn-primary { background: #9b5de5; border-color: #9b5de5; font-weight: 600; }
+    .btn-primary:hover { background: #b57df0; border-color: #b57df0; }
+    a { color: #d0b0ff; }
+    a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow w-100" style="max-width: 400px;">
+      <div class="card-body p-4">
+        <h3 class="text-center mb-4">Welcome back</h3>
+
+        <form id="loginForm" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" minlength="6" required>
+            <div class="invalid-feedback">Password must be at least 6 characters.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Log in</button>
+        </form>
+
+        <p class="text-center mt-3 mb-0 small">
+          No account? <a href="#">Sign up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (form.checkValidity()) alert('Form is valid.');
+      form.classList.add('was-validated');
+    });
+  </script>
+</body>
+</html>
